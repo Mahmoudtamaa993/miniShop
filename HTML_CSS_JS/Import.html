@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-color: #303641;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container-register">
+        <div id="title">
+            Import
+        </div>
+
+        <form action="http://localhost/miniShop/PHP/Articles.php" method="post" enctype="multipart/form-data">
+            <div class="input">
+                <input id="Name" name="Name" placeholder="Name" type="text" required class="validate" autocomplete="off">
+            </div>
+            
+            <div class="input">
+                <input id="Price" name ="Price" placeholder="Price" type="currency" required class="validate" autocomplete="off">
+            </div>
+            
+            <div class="input">
+                <input id="quantity" name="quantity" placeholder="Quantity" type="number" required class="validate" autocomplete="off">
+            </div>
+            <div class="upload">
+                <label id="lable">Description</label> <br>
+                <textarea id="descriptionText" name="descriptionText" placeholder="Quantity"  rows="4" cols="20">
+                </textarea>
+            </div>
+
+            <div>
+                <label for="file">Datei auswählen</label>
+                <input type="file" name="myImage" id="myImage">
+            </div>
+             <div>   
+                <input type="submit" name="submit" value="Import" />
+            </div>
+        </form>
+
+            
+        
+
+    </div>
+</body>
+
+</html>

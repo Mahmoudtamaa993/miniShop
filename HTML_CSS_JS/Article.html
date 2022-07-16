@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Spielerei mit Tabellen: Zebrastreifen</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <nav class="main-navbar‚">
+    <ul>
+      <li><a href="About.html"><img src="./img/logo.svg" alt="logo of the plantstore" ></a></li>
+                <li><a class="navpoints" href="Article.html">Home</a></li>
+                <li><a class="navpoints" href="shoppingcart.html">Cart</a></li>
+                <li><a class="navpoints" href="login.html">Login</a></li>
+                <li><a class="navpoints" href="register.html">Register</a></li>
+    </ul>
+</nav>
+
+  <table id="Article">
+    <caption>Article</caption>
+    <col width=50>
+    <col width=600>
+    <col width=200>
+    <col width=300>
+    <col width=400>
+    <thead>
+      <tr>
+        <th>Nr</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Aktion</th>
+      </tr>
+    </thead>
+    <tbody id="articleTableBody">
+
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">
+          <a href="shoppingcart.html">Go To Cart</a>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+  <script type="text/javascript" src="js/cart.js"></script>
+  <script type="text/javascript">
+    var articlesTable = document.getElementById("articleTableBody")
+    
+
+    console.log(articles)
+    for (let index = 0; index < articles.length; index++) {
+      const article = articles[index];
+      var articleHtml = `
+      <tr>
+        <td>${article.id}</td>
+        <td><a href="ArticleInfo.html?id=${article.id}">${article.title}</a></td>
+        <td>${article.price}</td>
+        <td><button onclick="addToCart(${article.id})">Zum Warenkorb hinzufügen</button></td>
+      </tr>`
+      console.log(articleHtml)
+      articlesTable.innerHTML += articleHtml
+    }
+  </script>
+
+</body>
+
+</html>
