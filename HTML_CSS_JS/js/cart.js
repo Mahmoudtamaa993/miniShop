@@ -28,6 +28,7 @@ function saveCartItems(items) {
 }
 
 function addToCart(id) {
+    
     var article = articles.find(elem => elem.id === id)
     var cartStorage = getCartItems()
     var articleExists = cartStorage.find(elem => elem.id === id)
@@ -46,6 +47,34 @@ function addToCart(id) {
         })
     }
     saveCartItems(cartStorage)
+    console.log("test")
+    alert("Article was added :) ")
+}
+
+
+function addArticleToCart(article) {
+    console.log(article)
+    
+   
+    //var article = articles.find(elem => elem.id === id)
+    var cartStorage = getCartItems()
+    var articleExists = cartStorage.find(function(elem) { return elem.id === article.id })
+    if (!articleExists) {
+        var cartItem = {
+            ...article,
+            quantity: 1
+        }
+        cartStorage.push(cartItem)
+    } else {
+        cartStorage.map(elem => {
+            if (elem.id === article.id) {
+                elem.quantity += 1
+            }
+            return elem
+        })
+    }
+    saveCartItems(cartStorage)
+    console.log("test")
     alert("Article was added :) ")
 }
 

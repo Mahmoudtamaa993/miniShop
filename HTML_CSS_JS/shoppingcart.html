@@ -63,8 +63,8 @@
       const cartItem = cartItems[index];
       var html = `
       <tr class="cart-row">
-        <td class="cart-item">${cartItem.title}</td>
-        <td class="cart-price">€${cartItem.price}</td>
+        <td class="cart-item">${cartItem.name}</td>
+        <td class="cart-price">${cartItem.price}</td>
         <td class="cart-quantity">
           <div class="quantity">
             <input class="cart-quantity-input" type="number" name="quantity" min="1" max="10"
@@ -103,7 +103,7 @@
         total = total + itemTotal
       }
       total = Math.round(total * 100) / 100
-      document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+      document.getElementsByClassName('cart-total-price')[0].innerText =  total
     }
 
     function removeItem(event) {

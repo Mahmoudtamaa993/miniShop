@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -8,8 +9,9 @@
 
 <body>
 
+  <p id="test12"></p>
   <header class="navbar">
-    <nav class="main-navbar‚">
+    <nav class="main-navbar">
       <ul>
         <li><a href="About.html"><img src="./img/logo.svg" alt="logo of the plantstore" ></a></li>
         <li><a class="navpoints" href="Article.html">Home</a></li>
@@ -19,29 +21,27 @@
 
   <h2 style="text-align:center">Article Info</h2>
 
-  <div class="card">
+  <div class="card", id ="info">
     <img src="img/p1.jpg" alt="pflanze 1" style="width:100%">
     <h1 class="title"></h1>
-    <p class="price"></p>
+    <p class="price",id="articlePrice"></p>
     <p class="description"></p>
     <p><button class="addToCart">Add to Cart</button></p>
   </div>
-  <script type="text/javascript" src="js/cart.js"></script>
+
   <script type="text/javascript">
+
     var url = window.location.search;
     var articleId = url.replace('?id=', '');
-    var article = articles.find(elem => elem.id == articleId)
-    console.log(article)
 
-    document.querySelector(".title").textContent = article.title
-    document.querySelector(".price").textContent = "€" + article.price
-    document.querySelector(".title").description = article.description
     document.querySelector(".addToCart").addEventListener("click", function() {
       addToCart(article.id)
     })
 
 
   </script>
+    <script type="text/javascript" src="js/cart.js"></script>
+    <script type="text/javascript" src="js/integration.js"></script>
 </body>
 
 </html>

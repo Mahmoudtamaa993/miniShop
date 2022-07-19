@@ -1,6 +1,14 @@
 <?php
 include './inc/setupDB.php';
+/*
+session_start();
+echo $_SESSION["username"];
+echo $_SESSION["email"];
 
+echo "test";
+
+die();
+*/
 $username ='Mahmoud';
 $sql = "SELECT articles.name, orders.Quantity, orders.pDate FROM Orders, users, articles where users.id = userid AND articles.id = articleID AND users.username='$username'";
 $result = $db->query($sql);
