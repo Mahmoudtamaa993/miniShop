@@ -23,7 +23,7 @@ if (isset($_POST['login'])){
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: http://localhost/miniShop/HTML_CSS_JS/Article.html');
+            header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
 
         }
     }

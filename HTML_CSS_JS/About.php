@@ -13,15 +13,14 @@
         <nav class="main-navbar">
           <ul>
             <li><a href="About.html"><img src="./img/logo.svg" alt="logo of the plantstore" ></a></li>
-            <li><a class="navpoints" href="Article.html">Home</a></li>
-            <li><a class="navpoints" href="shoppingcart.html">Dein Warenkorb</a></li>
+            <li><a class="navpoints" href="article.php">Home</a></li>
           </ul>
       </nav>
    <h2>Buy beautiful plants at</h2>
    <h1>The Plantstore</h1>
   <p>Plants that help your apartment to feel like the apartment you always dreamed of. Get the plant of your choice in our plantstore.</p>
   <form>
-    <a href="Article.html">
+    <a href="Article.php">
         <input type="button" value="Shop">
     </a>
 </form>

@@ -1,5 +1,4 @@
 window.addEventListener("load", showResult);
- 
 
 function showResult() {
     var xmlhttp = new XMLHttpRequest();
@@ -84,7 +83,8 @@ function ajaxShowArticles(event) {
 
 function showArticleInfo(article){
     console.log(article)
-    document.getElementById("test12").innerHTML = article.length;
+    document.querySelectorAll(".test12").innerHTML=article.length;;
+  //  document.getElementById("test12").innerHTML = article.length;
    // document.querySelector(".price").textContent = article.price
     //document.querySelector(".description").description = article.description
 

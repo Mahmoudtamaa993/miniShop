@@ -17,7 +17,7 @@ $isAdmin = false;
   <nav class="main-navbar‚">
     <ul>
       <li><a href="../HTML_CSS_JS/About.html"><img src="../HTML_CSS_JS/img/logo.svg" alt="logo of the plantstore" ></a></li>
-                <li><a class="navpoints" href="Article.html">Home</a></li>
+                <li><a class="navpoints" href="article.php">Home</a></li>
                 <li><a class="navpoints" href="shoppingcart.html">Cart</a></li>
                 <?php if (!$isLoggedIn) { ?>
                   <li><a class="navpoints" href="login.html">Login</a></li>

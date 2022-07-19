@@ -22,7 +22,7 @@
             Import
         </div>
 
-        <form action="http://localhost/miniShop/PHP/Articles.php" method="post" enctype="multipart/form-data">
+        <form action="http://localhost/miniShop/PHP/importArticles.php" method="post" enctype="multipart/form-data">
             <div class="input">
                 <input id="Name" name="Name" placeholder="Name" type="text" required class="validate" autocomplete="off">
             </div>

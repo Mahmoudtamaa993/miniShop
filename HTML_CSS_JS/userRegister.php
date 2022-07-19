@@ -21,7 +21,7 @@
         <nav class="main-navbar">
             <ul>
               <li><a href="About.html"><img src="./img/logo.svg" alt="logo of the plantstore" ></a></li>
-              <li><a class="navpoints" href="Article.html">Home</a></li>
+              <li><a class="navpoints" href="article.php">Home</a></li>
               <li><a class="navpoints" href="shoppingcart.html">Dein Warenkorb</a></li>
             </ul>
         </nav>

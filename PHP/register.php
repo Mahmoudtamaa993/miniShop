@@ -59,7 +59,7 @@ if (isset($_POST['register'])) {
         $_SESSION['lastName'] = $lastname;
         $_SESSION['userName'] = $userName;
         $_SESSION['success'] = "You are now logged in";
-        header('location: http://localhost/miniShop/HTML_CSS_JS/Article.html');
+        header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
     }
     else{
       if (count($errors) > 0){

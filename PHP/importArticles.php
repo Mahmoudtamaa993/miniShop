@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
                 VAlUES ('$Name', '$descriptionText', '$price', 0x".bin2hex($blob).", '$quantity')";
                 
         mysqli_query($db, $query);
-        header('location: http://localhost/miniShop/HTML_CSS_JS/Article.html');
+        header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
     }else{
       if (count($errors) > 0){
         foreach ($errors as $error){
