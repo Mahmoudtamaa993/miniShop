@@ -14,14 +14,15 @@ if (isset($_POST['login'])){
         array_push($errors, "Password is required");
     }else{
         $password = md5($password);
-        $query = "SELECT username FROM users WHERE email='$email'";
+        $query = "SELECT id,username FROM users WHERE email='$email'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
             $row = mysqli_fetch_assoc($results);
             $username = $row["username"];
-            echo $username;
+            $id = $row["id"];
             $_SESSION['email'] = $email;
             $_SESSION['username'] = $username;
+            $_SESSION['id'] = $id;
             $_SESSION['success'] = "You are now logged in";
             header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
 

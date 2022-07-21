@@ -1,19 +1,21 @@
 <?php
 
     include './inc/setupDB.php';
-
-    $tname = 'Orders';
-
+    session_start();
+    if(!isset($_SESSION['username'])) {
+      echo "Bitte erst einloggen <a href=\"formular.html\">Login</a>"; }
+    else {
+      $id= $_SESSION["id"];
+      echo $id;
+    }  
+    $tname = "orders";
+    $articleID = $_POST['articleID'];
+    $quantity = $_POST['Quantity'];
+    $date = $_POST['pDate'];
+    $sql = "INSERT INTO $tname(UserID, articleID, Quantity,pDate) VALUES('$id','$articleID' ,'$quantity', '$date')";
+        
+    $db->query($sql) or die('An error occured 1: ' . mysql_error());
+    $db->close();
+?> 
     
 
-    // der SQL-Befehl für das Hinzufügen
-    $sql = "INSERT INTO $tname(userID, articleID, Quantity) VALUES('','' ,'', '2002-01-01';
-
-    if (!mysqli_query($conn, $sql)) {
-        die("Insert fehlgeschlagen: " . mysqli_error());
-    } else {
-        echo "Das Buch wurde erfolgreich hinzugefügt!";
-    }
-
-    $conn -> closs();
-?> 

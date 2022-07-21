@@ -5,10 +5,9 @@ $isAdmin = false;
 
 session_start();
   if(!isset($_SESSION['username'])) {
-    echo "Bitte erst einloggen <a href=\"formular.html\">Login</a>"; }
+    echo "Bitte erst einloggen <a href=\"userLogin.php\">Login</a>"; }
   else {
-    echo $_SESSION["username"] . '  ' . isset($_SESSION['email']);
-  }
+    $welcome = $_SESSION["username"]; }
 
 if (isset($_SESSION['username'])){
   $username = $_SESSION["username"];}
@@ -46,16 +45,19 @@ if (! empty($username)) {
                 <?php if (!$isLoggedIn) { ?>
                   <li><a class="navpoints" href="userLogin.php">Login</a></li>
                   <li><a class="navpoints" href="userRegister.php">Register</a></li>
+                  <li><a class="navpoints" href="logOut.php">logOut</a></li>
                 <?php } elseif($isLoggedIn && $isAdmin)  { ?>
                   <li><a class="navpoints" href="import.php">Import Article</a></li>
-                  <li><a class="navpoints" href="AllCart.php">All Cart</a></li>
-                  <li><a class="navpoints" href="logOut.php">logOut</a></li>
+                  <li><a class="navpoints" href="../php/getAllUserOrders.php">All Cart</a></li>
+                  <li><a class="navpoints" href="users.php">Users</a></li>
+                  
                 <?php }elseif(! $isAdmin && $isLoggedIn)  { ?>
                   <li><a class="navpoints" href="logOut.php">logOut</a></li>
                 <?php } ?>
               </ul>
     </nav>
-
+    <p><?php if ($isLoggedIn){ echo 'Welcome' .'   '. $welcome; }?></p>
+  
   <table id="article">
     <thead id ="thead">
     </thead>

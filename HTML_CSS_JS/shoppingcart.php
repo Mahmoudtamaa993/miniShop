@@ -12,7 +12,6 @@
       <ul>
         <li><a href="About.html"><img src="./img/logo.svg" alt="logo of the plantstore" ></a></li>
         <li><a class="navpoints" href="article.php">Home</a></li>
-        <li><a class="navpoints" href="shoppingcart.html">Dein Warenkorb</a></li>
       </ul>
   </nav>
     
@@ -56,9 +55,10 @@
         <td class="cart-total-price"></td>
         <td><button id="insert" type="submit">Proceeed to Checkout</button></td>
       </tr>
+      
     </tbody>
   </table>
-
+  <p id="infoInsert"></p>
   <script type="text/javascript" src="js/cart.js"></script>
   <script type="text/javascript" src="js/insertOrders.js"></script>
   <script>
