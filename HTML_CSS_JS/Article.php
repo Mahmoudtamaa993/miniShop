@@ -45,7 +45,7 @@ if (! empty($username)) {
                 <?php if (!$isLoggedIn) { ?>
                   <li><a class="navpoints" href="userLogin.php">Login</a></li>
                   <li><a class="navpoints" href="userRegister.php">Register</a></li>
-                  <li><a class="navpoints" href="logOut.php">logOut</a></li>
+         
                 <?php } elseif($isLoggedIn && $isAdmin)  { ?>
                   <li><a class="navpoints" href="import.php">Import Article</a></li>
                   <li><a class="navpoints" href="../php/getAllUserOrders.php">All Cart</a></li>
@@ -59,10 +59,20 @@ if (! empty($username)) {
     <p><?php if ($isLoggedIn){ echo 'Welcome' .'   '. $welcome; }?></p>
   
   <table id="article">
-    <thead id ="thead">
+    <thead id ="theads">
+      <tr>
+          <th>Nr</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Img </th>
+          <th>Quantity </th>
+          <th>Add to cart </th>
+      </tr>  
     </thead>
+
     <tbody id="articleTableBody">
     </tbody>
+
     <tfoot>
       <tr>
         <td colspan="7">
@@ -75,6 +85,13 @@ if (! empty($username)) {
       </tr>
     </tfoot>
   </table>
+
+  <div class="card"  id ="info">
+    <div id="articleImage"></div>
+    <h1 class="title"  id = "articletTitle"></h1>
+    <h1 class="price"  id = "articlePrice"></h1>
+    <p class="description"  id="articleDescription"></p>
+  </div>
  
 </body>
 

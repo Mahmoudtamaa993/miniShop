@@ -31,7 +31,7 @@ function insertOrder() {
     }
 }
 
-// Falls das Buch erfolgreicht inzugefügt ist ...
+// Falls das order erfolgreicht inzugefügt ist ...
 function ajaxInsertOrder(event) {
     document.getElementById("infoInsert").innerHTML = "Thanks for your Order!";  
 }

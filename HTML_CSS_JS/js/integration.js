@@ -10,19 +10,12 @@ function showResult() {
 }
 
 function ajaxShowArticles(event) {
-    
     var myObj = JSON.parse(event.target.responseText);
-    var thead = document.getElementById("thead");
-    var trh = document.createElement("tr");
-    for (var key in myObj[0]) {
-        var th = document.createElement("th");
-        th.appendChild(document.createTextNode(key));
-        trh.appendChild(th);
-    }
-    thead.appendChild(trh);
 
     var tbody = document.getElementById("articleTableBody");
     for (let i=0; i<myObj.length; i++) {
+        
+
         var tr = document.createElement("tr");
 
         var td1 = document.createElement("td");
@@ -42,10 +35,7 @@ function ajaxShowArticles(event) {
         tr.appendChild(td2);
 
 ///////////////////////////////////////////////////        
-        var td3 = document.createElement("td");
-        var description = myObj[i]['description'];
-        td3.appendChild(document.createTextNode(description));
-        tr.appendChild(td3);
+
         
         var td4 = document.createElement("td");
         var price = myObj[i]['price'];
@@ -81,14 +71,12 @@ function ajaxShowArticles(event) {
     }
 }
 
-function showArticleInfo(article){
-    console.log(article)
-    document.querySelectorAll(".test12").innerHTML=article.length;;
-  //  document.getElementById("test12").innerHTML = article.length;
-   // document.querySelector(".price").textContent = article.price
-    //document.querySelector(".description").description = article.description
-
-
+function showArticleInfo(article){ 
+    document.getElementById("articletTitle").innerHTML = article.name;
+    document.getElementById("articleDescription").innerHTML = article.description;
+    document.getElementById("articlePrice").innerHTML = article.price +'  '+ '$';
+    document.getElementById("articleImage").innerHTML = article.img1;
+    
 }
 
 
