@@ -50,6 +50,7 @@ if (! empty($username)) {
                   <li><a class="navpoints" href="import.php">Import Article</a></li>
                   <li><a class="navpoints" href="../php/getAllUserOrders.php">All Cart</a></li>
                   <li><a class="navpoints" href="users.php">Users</a></li>
+                  <li><a class="navpoints" href="logOut.php">logOut</a></li>
                   
                 <?php }elseif(! $isAdmin && $isLoggedIn)  { ?>
                   <li><a class="navpoints" href="logOut.php">logOut</a></li>

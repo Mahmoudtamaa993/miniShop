@@ -13,8 +13,8 @@ if (isset($_POST['login'])){
     if (empty($password)) {
         array_push($errors, "Password is required");
     }else{
-        $password = md5($password);
-        $query = "SELECT id,username FROM users WHERE email='$email'";
+        //$password = md5($password);
+        $query = "SELECT id,username FROM users WHERE email='$email' AND pswd='$password'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {
             $row = mysqli_fetch_assoc($results);
@@ -26,6 +26,8 @@ if (isset($_POST['login'])){
             $_SESSION['success'] = "You are now logged in";
             header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
 
+        }else{
+            array_push($errors, "Password or Email mot correct");
         }
     }
 }

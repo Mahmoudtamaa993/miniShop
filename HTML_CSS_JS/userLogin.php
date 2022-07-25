@@ -42,7 +42,7 @@
 
         <div class="register">
             Don't have an account yet?
-            <a href="#"><button id="register-link">Register here</button></a>
+            <a href="./userRegister.php"><button id="register-link">Register here</button></a>
         </div>
         
     </div>

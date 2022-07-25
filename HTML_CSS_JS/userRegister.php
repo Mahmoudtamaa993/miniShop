@@ -70,7 +70,7 @@
 
         <div class="register">
             Do you already have an account?
-            <a href="#"><button id="register-link">Log In here</button></a>
+            <a href="./userLogin.php"><button id="register-link">Log In here</button></a>
         </div>
     </div>
     <script>
@@ -129,9 +129,11 @@
                 return (document.getElementById("sPswd").innerHTML = "too_short");
             }  else if (str.search(/\d/) == -1) {
                 return (document.getElementById("sPswd").innerHTML = "no_num");
-            } else if (str.search(/[a-zA-Z]/) == -1) {
-                return (document.getElementById("sPswd").innerHTML = "no_letter");
-            } 
+            } else if (str.search(/[a-z]/) == -1) {
+                return (document.getElementById("sPswd").innerHTML = "no_Small_letter");
+            } else if (str.search(/[A-Z]/) == -1) {
+                return (document.getElementById("sPswd").innerHTML = "no_Kapital_letter");
+            }
             return (document.getElementById("sPswd").innerHTML = "");
         }
         

@@ -6,7 +6,7 @@ include './inc/setupDB.php';
 session_start();
 // initializing variables
 $firstName = '';
-$lastname = '' ;
+$lastName = '' ;
 $email = '' ;
 $userName = '';
 $pswd = '';
@@ -26,7 +26,7 @@ if (isset($_POST['register'])) {
     // form validation: ensure that the form is correctly filled ...
     // by adding (array_push()) corresponding error unto $errors array
     if (empty($firstName)) { array_push($errors, "firstName is required"); }
-    if (empty($lastname)) { array_push($errors, "lastname is required"); }
+    if (empty($lastName)) { array_push($errors, "lastname is required"); }
     if (empty($email)) { array_push($errors, "Email is required"); }
     if (empty($userName)) { array_push($errors, "Username is required"); }
     if (empty($password_1)) { array_push($errors, "Password is required"); }
@@ -56,7 +56,7 @@ if (isset($_POST['register'])) {
         mysqli_query($db, $query);
         $_SESSION['email'] = $email;
         $_SESSION['firstName'] = $firstName;
-        $_SESSION['lastName'] = $lastname;
+        $_SESSION['lastName'] = $lastName;
         $_SESSION['userName'] = $userName;
         $_SESSION['success'] = "You are now logged in";
         header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
