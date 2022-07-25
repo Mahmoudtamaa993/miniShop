@@ -26,7 +26,7 @@ if (! empty($username)) {
 <html>
 
 <head>
-  <title>Spielerei mit Tabellen: Zebrastreifen</title>
+  <title>Articles</title>
   <link rel="stylesheet" href="main.css">
 </head>
 
@@ -86,7 +86,7 @@ if (! empty($username)) {
       </tr>
     </tfoot>
   </table>
-
+  <p id="ajaxinfo"></p>
   <div class="card"  id ="info">
     <div id="articleImage"></div>
     <h1 class="title"  id = "articletTitle"></h1>

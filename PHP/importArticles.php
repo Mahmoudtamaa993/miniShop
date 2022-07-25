@@ -21,6 +21,7 @@ if (isset($_POST['submit'])) {
     $bildPath = $_FILES['myImage']['tmp_name'];
     $blob = file_get_contents($bildPath);
     
+    
     // form validation: ensure that the form is correctly filled ...
     
     if (empty($Name)) { array_push($errors, "name is required"); }
@@ -43,9 +44,9 @@ if (isset($_POST['submit'])) {
       
         $query = "INSERT INTO Articles (name, description, price, img, Quantity)
                 VAlUES ('$Name', '$descriptionText', '$price', 0x".bin2hex($blob).", '$quantity')";
-                
-        mysqli_query($db, $query);
-        header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
+        echo $query;        
+        //mysqli_query($db, $query);
+        //header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
     }else{
       if (count($errors) > 0){
         foreach ($errors as $error){

@@ -66,17 +66,70 @@ function ajaxShowArticles(event) {
         tr.appendChild(td7);
 
 
+        var username = myObj[i]['usernames'];
+
+        if (username == "admin"){
+            var td8 = document.createElement("td");
+            const deleteArticle = document.createElement("button");
+            var btnTest = "Delete"
+            deleteArticle.innerHTML = btnTest;
+            deleteArticle.addEventListener("click",function() {
+
+                
+                deleteArticles(myObj[i])
+            })
+            td8.appendChild(deleteArticle);
+            tr.appendChild(td8);
+
+            var td8 = document.createElement("td");
+            const updateArticle = document.createElement("button");
+            var btnTest = "update"
+            updateArticle.innerHTML = btnTest;
+            updateArticle.addEventListener("click",function() {
+                CreateCartItems(myObj[i])
+                window.location.href = "updateArticles.php";
+                //updateArticles(myObj[i])
+            })
+            td8.appendChild(updateArticle);
+            tr.appendChild(td8);
+        }
+
+
+
+
         tbody.appendChild(tr);
         
     }
 }
-
-function showArticleInfo(article){ 
+function CreateCartItems(item) {
+    localStorage.setItem("selectedArticle", JSON.stringify(item))
+}
+function showArticleInfo(article){
+    // TODO: save in local storage and build new page for Information and make data call from localstorage 
     document.getElementById("articletTitle").innerHTML = article.name;
     document.getElementById("articleDescription").innerHTML = article.description;
     document.getElementById("articlePrice").innerHTML = article.price +'  '+ '$';
     document.getElementById("articleImage").innerHTML = article.img1;
     
+}
+
+function deleteArticles(article){
+    let articleID = article.id;
+    var formData = new FormData();
+    formData.append('articleID', articleID);
+
+    var ajaxRequest = new XMLHttpRequest();
+    ajaxRequest.addEventListener("load", ajaxDeleteArticle);
+    ajaxRequest.addEventListener("error", ajaxFehler);
+    ajaxRequest.open("POST", "../php/deleteArticle.php");
+    ajaxRequest.send(formData);
+}
+
+function ajaxDeleteArticle(event) {
+    document.getElementById("ajaxinfo").innerHTML = "article was deleted";  
+}
+function ajaxUpdateArticle(event) {
+    document.getElementById("ajaxinfo").innerHTML = "article was updated";  
 }
 
 
