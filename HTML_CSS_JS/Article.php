@@ -53,7 +53,9 @@ if (! empty($username)) {
                   <li><a class="navpoints" href="logOut.php">logOut</a></li>
                   
                 <?php }elseif(! $isAdmin && $isLoggedIn)  { ?>
+                  <li><a class="navpoints" href="../PHP/getUserOrdersByUsername.php">Orders</a></li>
                   <li><a class="navpoints" href="logOut.php">logOut</a></li>
+                  
                 <?php } ?>
               </ul>
     </nav>

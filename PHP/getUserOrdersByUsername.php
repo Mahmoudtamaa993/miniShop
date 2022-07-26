@@ -1,15 +1,26 @@
-<?php
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+    <link rel="stylesheet" href="../HTML_CSS_JS/main.css">
+  </head>
+  <body>
+  <script type="text/javascript" src="js/usersSetup.js"></script> 
+  <nav class="main-navbar">
+        <ul>
+          <li><a href="About.html"><img src="../HTML_CSS_JS/img/logo.svg" alt="logo of the plantstore" ></a></li>
+          <li><a class="navpoints" href="../HTML_CSS_JS/article.php">Home</a></li>
+        </ul>
+  </nav>
+  <?php
 include './inc/setupDB.php';
-/*
+
 session_start();
-echo $_SESSION["username"];
-echo $_SESSION["email"];
-
-echo "test";
-
-die();
-*/
-$username ='Mahmoud';
+if (isset($_SESSION['username'])){
+    $username = $_SESSION["username"];
+  }
+  
 $sql = "SELECT articles.name, orders.Quantity, orders.pDate FROM Orders, users, articles where users.id = userid AND articles.id = articleID AND users.username='$username'";
 $result = $db->query($sql);
 $rows = array();
@@ -18,7 +29,7 @@ while ($row = $result->fetch_assoc()) {
 }
 
 $ps = json_encode($rows);
-echo ($ps);
+
 
 if($result = mysqli_query($db, $sql)){
     if(mysqli_num_rows($result) > 0){
@@ -48,3 +59,5 @@ if($result = mysqli_query($db, $sql)){
 // Close connection
 mysqli_close($db);
 ?>
+  </body>
+</html>
