@@ -29,7 +29,8 @@ function ajaxShowArticles(event) {
         var name = myObj[i]['name'];
         articleInfo.innerHTML = name;
         articleInfo.addEventListener("click",function() {
-            showArticleInfo(myObj[i])
+            localStorage.setItem("articleInfo", JSON.stringify(myObj[i]))
+            window.location.href = "ArticleInfo.html";
         })
         td2.appendChild(articleInfo);
         tr.appendChild(td2);
@@ -103,14 +104,6 @@ function ajaxShowArticles(event) {
 }
 function CreateCartItems(item) {
     localStorage.setItem("selectedArticle", JSON.stringify(item))
-}
-function showArticleInfo(article){
-    // TODO: save in local storage and build new page for Information and make data call from localstorage 
-    document.getElementById("articletTitle").innerHTML = article.name;
-    document.getElementById("articleDescription").innerHTML = article.description;
-    document.getElementById("articlePrice").innerHTML = article.price +'  '+ '$';
-    document.getElementById("articleImage").innerHTML = article.img1;
-    
 }
 
 function deleteArticles(article){

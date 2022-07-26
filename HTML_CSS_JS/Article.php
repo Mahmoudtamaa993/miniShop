@@ -33,7 +33,7 @@ if (! empty($username)) {
 <body>
   <script type="text/javascript" src="js/integration.js"></script>
   <script type="text/javascript" src="js/cart.js"></script>
-  <nav class="main-navbar‚">
+  <nav class="main-navbar">
     <ul>
       <li><a href="../HTML_CSS_JS/About.php"><img src="../HTML_CSS_JS/img/logo.svg" alt="logo of the plantstore" ></a></li>
                 <li><a class="navpoints" href="article.php">Home</a></li>
@@ -85,15 +85,7 @@ if (! empty($username)) {
         </td>
       </tr>
     </tfoot>
-  </table>
-  <p id="ajaxinfo"></p>
-  <div class="card"  id ="info">
-    <div id="articleImage"></div>
-    <h1 class="title"  id = "articletTitle"></h1>
-    <h1 class="price"  id = "articlePrice"></h1>
-    <p class="description"  id="articleDescription"></p>
-  </div>
- 
+  </table> 
 </body>
 
 </html>

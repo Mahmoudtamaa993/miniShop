@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Spielerei mit Tabellen: Zebrastreifen</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <nav class="main-navbar‚">
+      <ul>
+        <li><a href="About.html"><img src="./img/logo.svg" alt="logo of the plantstore" ></a></li>
+                  <li><a class="navpoints" href="article.php">Home</a></li>
+
+      </ul>
+  </nav>
+
+  <h2 style="text-align:center">Article Info</h2>
+
+  <div class="card">
+    
+    <div id="articleImage1"></div>
+    <h1 class="title"></h1>
+    <p class="price"></p>
+    <p class="description"></p>
+    <p><button class="addToCart">Add to Cart</button></p>
+  </div>
+  <script type="text/javascript" src="js/cart.js"></script>
+  <script>
+    function getArticleInfo() {
+      return JSON.parse(localStorage.getItem("articleInfo") || "[]")
+    }
+    window.addEventListener("load", showArticleInfo);
+    function showArticleInfo(){
+      var selected = getArticleInfo()
+      console.log(selected);
+      document.querySelector(".title").textContent= selected.name;
+      document.querySelector(".price").textContent = selected.price;
+      document.querySelector(".description").textContent = selected.description;
+      document.getElementById("articleImage1").innerHTML = selected.img1;
+      document.querySelector(".addToCart").addEventListener("click", function() {
+      addToCart(selected.id)
+    })
+      
+   
+    }
+  </script>
+
+
+  </script>
+</body>
+
+</html>
