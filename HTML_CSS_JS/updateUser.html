@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+
+</head>
+
+<body>
+  
+  <form action="http://localhost/miniShop/PHP/updateUser.php" method="post" enctype="multipart/form-data">
+    <div class="input">
+        <input id="SelectedId" name="SelectedId" placeholder="Id" type="text" required class="validate" autocomplete="off">
+    </div>
+    <div class="input">
+        <input id="SelectedFirstName" name="SelectedFirstName" placeholder="FirstName" type="text" required class="validate" autocomplete="off">
+    </div>
+    <div class="input">
+      <input id="SelectedLastName" name="SelectedLastName" placeholder="LastName" type="text" required class="validate" autocomplete="off">
+    </div>
+    <div class="input">
+      <input id="SelectedEmail" name="SelectedEmail" placeholder="Email" type="text" required class="validate" autocomplete="off">
+    </div>
+    <div class="input">
+      <input id="SelectedUserName" name="SelectedUserName" placeholder="UserName" type="text" required class="validate" autocomplete="off">
+    </div>
+    <div class="input">
+      <input id="SelectedPassword" name="SelectedPassword" placeholder="Password" type="text" required class="validate" autocomplete="off">
+    </div>
+
+      <div>   
+        <input type="submit" name="submitUpdate" value="Update" />
+    </div>   
+  </form>
+  <script type="text/javascript" src="js/articlesSetup.js"></script>
+  <script type="text/javascript" src="js/cart.js"></script>
+  <script>
+    function getSelectedCartItem() {
+      return JSON.parse(localStorage.getItem("selectedUser") || "[]")
+    }
+    window.addEventListener("load", showSelectedArticle);
+    function showSelectedArticle(){
+      var selected = getSelectedCartItem()
+      console.log(selected);
+      document.getElementById("SelectedId").value = selected.id;
+      document.getElementById("SelectedFirstName").value = selected.firstName;
+      document.getElementById("SelectedLastName").value = selected.lastName;
+      document.getElementById("SelectedEmail").value = selected.email;
+      document.getElementById("SelectedUserName").value = selected.userName;
+      document.getElementById("SelectedPassword").value = selected.password;
+    }
+  </script>
+</body>
+
+</html>

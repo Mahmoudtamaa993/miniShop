@@ -31,7 +31,7 @@ if (! empty($username)) {
 </head>
 
 <body>
-  <script type="text/javascript" src="js/articleSetup.js"></script>
+  <script type="text/javascript" src="js/articlesSetup.js"></script>
   <script type="text/javascript" src="js/cart.js"></script>
   <nav class="main-navbar">
     <ul>

@@ -1,48 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Spielerei mit Tabellen: Zebrastreifen</title>
+    <title>Users</title>
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    
-  
+  <script type="text/javascript" src="js/usersSetup.js"></script> 
+  <nav class="main-navbar">
+        <ul>
+          <li><a href="About.html"><img src="./img/logo.svg" alt="logo of the plantstore" ></a></li>
+          <li><a class="navpoints" href="article.php">Home</a></li>
+        </ul>
+  </nav>
 
-    <table id="users">
-        <caption>Users</caption>
-            <col width=50> 
-            <col width=200> 
-            <col width=200>
-            <col width=300>  
-        <thead>
-        <tr>
-            <th>Nr</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email </th>
-            
-        </tr>
-        </thead>
-        <tbody> 
-        <tr>
-            <td>1</td>
-            <td>Maik</td>
-            <td>Tran</td>
-            <td>maik@uni-bremen.de</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>paul</td>
-            <td>mim</td>
-            <td>paul@uni-bremen.de</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Mahmoud</td>
-          <td>mim</td>
-          <td>Mahmoud@uni-bremen.de</td>
-      </tr>
-        </tbody>
-        </table>
+  <table id="user">
+    <thead id ="theads">
+      <tr>
+          <th>id</th>
+          <th>firstname</th>
+          <th>lastname</th>
+          <th>email </th>
+          <th>username </th>
+          <th>password</th>
+      </tr>  
+    </thead>
+
+    <tbody id="userTableBody">
+    </tbody>
+
+  </table> 
+  <p id="ajaxinfo"></P>
   </body>
 </html>
