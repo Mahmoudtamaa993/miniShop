@@ -15,5 +15,5 @@
     session_destroy();
 ?>
 <br/>
-Zurück zu <a href="userLogin.html">Login</a>
+back to <a href="userLogin.html">Login</a>
 </body>
