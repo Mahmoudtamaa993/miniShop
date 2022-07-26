@@ -13,7 +13,6 @@ if (isset($_POST['login'])){
     if (empty($password)) {
         array_push($errors, "Password is required");
     }else{
-        //$password = md5($password);
         $query = "SELECT id,username FROM users WHERE email='$email' AND pswd='$password'";
         $results = mysqli_query($db, $query);
         if (mysqli_num_rows($results) == 1) {

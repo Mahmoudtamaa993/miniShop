@@ -17,13 +17,13 @@ function ajaxShowArticles(event) {
         
 
         var tr = document.createElement("tr");
-
+        // id    
         var td1 = document.createElement("td");
         let id = myObj[i]['id'];
         console.log(id)
         td1.appendChild(document.createTextNode(id));
         tr.appendChild(td1);
-///////////////////////////////////////////////////
+        //article Info
         var td2 = document.createElement("td");
         const articleInfo = document.createElement("button");
         var name = myObj[i]['name'];
@@ -34,15 +34,12 @@ function ajaxShowArticles(event) {
         })
         td2.appendChild(articleInfo);
         tr.appendChild(td2);
-
-///////////////////////////////////////////////////        
-
-        
+        // price
         var td4 = document.createElement("td");
         var price = myObj[i]['price'];
         td4.appendChild(document.createTextNode(price));
         tr.appendChild(td4);
-    
+        // image
         var td5 = document.createElement("td");
         var bild = myObj[i]['img'];
         var img = document.createElement("IMG");
@@ -51,12 +48,12 @@ function ajaxShowArticles(event) {
         img.src = bild;
         td5.appendChild(img);
         tr.appendChild(td5);
-
+        //Quantity
         var td6 = document.createElement("td");
         var amount = myObj[i]['Quantity'];
         td6.appendChild(document.createTextNode(amount));
         tr.appendChild(td6);
-
+        // Add to cart 
         var td7 = document.createElement("td");
         const btn = document.createElement("button");
         btn.innerHTML = "Add To Cart";
@@ -70,36 +67,29 @@ function ajaxShowArticles(event) {
         var username = myObj[i]['usernames'];
 
         if (username == "admin"){
+            // Delete
             var td8 = document.createElement("td");
             const deleteArticle = document.createElement("button");
             var btnTest = "Delete"
             deleteArticle.innerHTML = btnTest;
-            deleteArticle.addEventListener("click",function() {
-
-                
+            deleteArticle.addEventListener("click",function() {  
                 deleteArticles(myObj[i])
             })
             td8.appendChild(deleteArticle);
             tr.appendChild(td8);
-
-            var td8 = document.createElement("td");
+            // Update
+            var td9 = document.createElement("td");
             const updateArticle = document.createElement("button");
             var btnTest = "update"
             updateArticle.innerHTML = btnTest;
             updateArticle.addEventListener("click",function() {
                 CreateCartItems(myObj[i])
-                window.location.href = "updateArticles.php";
-                //updateArticles(myObj[i])
+                window.location.href = "updateArticles.html";
             })
-            td8.appendChild(updateArticle);
-            tr.appendChild(td8);
+            td9.appendChild(updateArticle);
+            tr.appendChild(td9);
         }
-
-
-
-
         tbody.appendChild(tr);
-        
     }
 }
 function CreateCartItems(item) {
@@ -121,10 +111,6 @@ function deleteArticles(article){
 function ajaxDeleteArticle(event) {
     document.getElementById("ajaxinfo").innerHTML = "article was deleted";  
 }
-function ajaxUpdateArticle(event) {
-    document.getElementById("ajaxinfo").innerHTML = "article was updated";  
-}
-
 
 function ajaxFehler(event) {
     alert(event.target.statusText);

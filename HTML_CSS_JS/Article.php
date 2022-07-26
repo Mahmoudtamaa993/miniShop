@@ -5,7 +5,7 @@ $isAdmin = false;
 
 session_start();
   if(!isset($_SESSION['username'])) {
-    echo "Bitte erst einloggen <a href=\"userLogin.php\">Login</a>"; }
+    echo "Bitte erst einloggen <a href=\"userLogin.html\">Login</a>"; }
   else {
     $welcome = $_SESSION["username"]; }
 
@@ -35,19 +35,19 @@ if (! empty($username)) {
   <script type="text/javascript" src="js/cart.js"></script>
   <nav class="main-navbar">
     <ul>
-      <li><a href="../HTML_CSS_JS/About.php"><img src="../HTML_CSS_JS/img/logo.svg" alt="logo of the plantstore" ></a></li>
+      <li><a href="../HTML_CSS_JS/About.html"><img src="../HTML_CSS_JS/img/logo.svg" alt="logo of the plantstore" ></a></li>
                 <li><a class="navpoints" href="article.php">Home</a></li>
                 <?php if ($isLoggedIn) { ?>
                   <li><a class="navpoints" href="shoppingcart.php">Cart</a></li> 
                 <?php } else  { ?> 
-                  <li><a class="navpoints" href="userLogin.php">Cart</a></li>   
+                  <li><a class="navpoints" href="userLogin.html">Cart</a></li>   
                 <?php } ?>
                 <?php if (!$isLoggedIn) { ?>
-                  <li><a class="navpoints" href="userLogin.php">Login</a></li>
-                  <li><a class="navpoints" href="userRegister.php">Register</a></li>
+                  <li><a class="navpoints" href="userLogin.html">Login</a></li>
+                  <li><a class="navpoints" href="userRegister.html">Register</a></li>
          
                 <?php } elseif($isLoggedIn && $isAdmin)  { ?>
-                  <li><a class="navpoints" href="import.php">Import Article</a></li>
+                  <li><a class="navpoints" href="import.html">Import Article</a></li>
                   <li><a class="navpoints" href="../php/getAllUserOrders.php">All Cart</a></li>
                   <li><a class="navpoints" href="users.php">Users</a></li>
                   <li><a class="navpoints" href="logOut.php">logOut</a></li>
@@ -80,12 +80,13 @@ if (! empty($username)) {
         <?php if ($isLoggedIn) { ?>
           <a href="shoppingcart.php">Go To Cart</a>  
         <?php } else  { ?> 
-          <a href="userLogin.php">Go To Cart</a>   
+          <a href="userLogin.html">Go To Cart</a>   
         <?php } ?>
         </td>
       </tr>
     </tfoot>
   </table> 
+  <p id="ajaxinfo"></P>
 </body>
 
 </html>

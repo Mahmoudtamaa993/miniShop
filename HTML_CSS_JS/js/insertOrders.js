@@ -9,7 +9,6 @@ function init() {
 function insertOrder() {
     
     var cartStorage = getCartItems();
-   // console.log(cartStorage.length);
     for(let i=0; i <= cartStorage.length  -1 ;i++ ){
         let articleID = cartStorage[i].id;
         let quantity = cartStorage[i].quantity;
@@ -33,7 +32,7 @@ function insertOrder() {
 
 // Falls das order erfolgreicht inzugefügt ist ...
 function ajaxInsertOrder(event) {
-    document.getElementById("infoInsert").innerHTML = "Thanks for your Order!";  
+    document.getElementById("infoInsert").innerHTML = "Thanks for your Order!"; 
 }
 
 function ajaxFehler(event) {

@@ -39,21 +39,19 @@ if (isset($_POST['submit'])) {
         array_push($errors, "Article already exists");
       }
     }
-
     if (count($errors) == 0) {
       
         $query = "INSERT INTO Articles (name, description, price, img, Quantity)
-                VAlUES ('$Name', '$descriptionText', '$price', 0x".bin2hex($blob).", '$quantity')";
-        echo $query;        
-        //mysqli_query($db, $query);
-        //header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
+                VAlUES ('$Name', '$descriptionText', '$price', 0x".bin2hex($blob).", '$quantity')";       
+        mysqli_query($db, $query);
+        header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
     }else{
       if (count($errors) > 0){
         foreach ($errors as $error){
           echo $error;
         }   
       }
-    }    
+    }   
   }
   mysqli_close($db);
 
