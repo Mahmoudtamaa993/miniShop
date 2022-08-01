@@ -12,20 +12,24 @@
   
   <form action="http://localhost/miniShop/PHP/updateArticle.php" method="post" enctype="multipart/form-data">
     <div class="input">
-        <input id="SelectedId" name="SelectedId" placeholder="Name" type="text" required class="validate" autocomplete="off">
+        <label>ID</label> <br>
+        <input id="SelectedId" name="SelectedId" placeholder="Id" type="text" required class="validate" autocomplete="off">
     </div>
     <div class="input">
-        <input id="test" name="test" placeholder="image path" type="text" required class="validate" autocomplete="off">
+        <input id="test" name="test" placeholder="image path" type="hidden" required class="validate" autocomplete="off">
     </div>
     <div class="input">
+        <label>Name</label> <br>
         <input id="SelectedName" name="SelectedName" placeholder="Name" type="text" required class="validate" autocomplete="off">
     </div>
     
     <div class="input">
+        <label>Price</label> <br>
         <input id="selectedPrice" name ="selectedPrice" placeholder="Price" type="currency" required class="validate" autocomplete="off">
     </div>
     
     <div class="input">
+        <label>Quantity</label> <br>
         <input id="selectedQuantity" name="selectedQuantity" placeholder="Quantity" type="number" required class="validate" autocomplete="off">
     </div>
     <div class="upload">
@@ -35,7 +39,7 @@
     </div>
 
     <div>
-        <label for="file">Datei auswählen</label>
+        <label for="file">select Image</label>
         <input type="file" name="selectedImage" id="selectedImage">
     </div>
       <div>   
