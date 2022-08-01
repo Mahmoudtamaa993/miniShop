@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     $descriptionText = mysqli_real_escape_string($db, $_POST['descriptionText']);
   
     $bildPath = $_FILES['myImage']['tmp_name'];
-    $blob = file_get_contents($bildPath);
+    
     
     
     // form validation: ensure that the form is correctly filled ...
@@ -40,10 +40,7 @@ if (isset($_POST['submit'])) {
       }
     }
     if (count($errors) == 0) {
-      
-        $query = "INSERT INTO Articles (name, description, price, img, Quantity)
-                VAlUES ('$Name', '$descriptionText', '$price', 0x".bin2hex($blob).", '$quantity')";       
-        mysqli_query($db, $query);
+        insertArticle($Name, $descriptionText, $price, $bildPath, $quantity);
         header('location: http://localhost/miniShop/HTML_CSS_JS/article.php');
     }else{
       if (count($errors) > 0){

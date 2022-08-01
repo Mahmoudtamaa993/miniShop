@@ -5,7 +5,9 @@ $server = "127.0.0.1";
 $username = "root";
 $password = "";
 $dbName = "miniShop";
-
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 // Create a database Connection
 $db = mysqli_connect($server,$username,$password,$dbName );
@@ -65,9 +67,9 @@ if (!$db){
 
     $fetchRow = $db -> query("SELECT * FROM articles");
     if (mysqli_num_rows($fetchRow) == 0) {
-        insertArticle("pflanzee1", "schön", "19.99", "../../HTML_CSS_JS/img/p1.jpg", "33");
-        insertArticle("pflanzee2", "schön", "19.99", "../../HTML_CSS_JS/img/p2.jpg", "3");
-        insertArticle("pflanzee2", "schön", "19.99", "../../HTML_CSS_JS/img/p3.jpg", "13"); 
+        insertArticle("pflanzee1", "schön", "19.99", "../../p1.png", "33");
+        insertArticle("pflanzee2", "schön", "19.99", "../../p2.png", "3");
+        insertArticle("pflanzee2", "schön", "19.99", "../../p3.png", "13"); 
     }
 
     function insertOrder($aUserID, $aArticleID, $aQuantity, $aDate){
