@@ -25,7 +25,7 @@
     <h1 class="title"></h1>
     <p class="price"></p>
     <p class="description"></p>
-    <p><button class="addToCart">Add to Cart</button></p>
+
   </div>
   <script type="text/javascript" src="js/cart.js"></script>
   <script>
@@ -39,11 +39,7 @@
       document.querySelector(".title").textContent= selected.name;
       document.querySelector(".price").textContent = selected.price;
       document.querySelector(".description").textContent = selected.description;
-      document.getElementById("articleImage1").innerHTML = selected.img1;
-      document.querySelector(".addToCart").addEventListener("click", function() {
-      addToCart(selected.id)
-    })
-      
+      document.getElementById("articleImage1").innerHTML = selected.img1;      
    
     }
   </script>
